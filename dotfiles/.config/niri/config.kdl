@@ -1,3 +1,6 @@
+environment {
+}
+
 input {
     focus-follows-mouse
     keyboard {
@@ -41,7 +44,7 @@ layout {
 //}
 
 window-rule {
-      opacity 0.85
+      opacity 1.0 
     background-effect {
           blur true
     }
@@ -51,7 +54,6 @@ window-rule {
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations { 
-      
 }
 
 // Window rules 
@@ -168,3 +170,5 @@ spawn-at-startup "qs"
 spawn-at-startup "swaybg" "-i" "/home/ebits/Pictures/wallpapers/sushi.jpg"
 spawn-at-startup "fnott"
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "XDG_SESSION_TYPE"
+

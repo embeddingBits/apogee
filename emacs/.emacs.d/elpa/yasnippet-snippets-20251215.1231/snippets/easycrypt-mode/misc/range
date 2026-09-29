@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: João Diogo Duarte
-# name: range
-# key: range
-# --
-$1 <= $2 <= $3

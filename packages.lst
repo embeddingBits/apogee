@@ -1,9 +1,3 @@
-# packages.lst - categorized package list for Arch Linux
-#
-# Usage: install.sh reads groups from here
-# Lines starting with # are comments.
-# Lines beginning with @ are group headers.
-# Packages can be shared across groups.
 
 @core
 mesa
@@ -18,13 +12,9 @@ brightnessctl
 libnotify
 xdg-utils
 zip
-unzip
-unrar
+unzip unrar
 
 @repos
-# Arch uses pacman.conf to enable [multilib] - handled in install.sh stage 2.
-# No extra repository packages needed. Keep group for compatibility.
-# Uncomment multilib manually or let install.sh do it.
 
 @network
 networkmanager
@@ -101,9 +91,11 @@ gcc
 zig
 go
 make
+perl-net-smtp-ssl
+perl-io-socket-ssl
+perl-mime-tools
 cmake
 python
 python-pip
 typst
-podman
-podman-compose
+docker

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: import statement
-# key: imp
-# --
-const ${1:name} = @import("${2:lib}");

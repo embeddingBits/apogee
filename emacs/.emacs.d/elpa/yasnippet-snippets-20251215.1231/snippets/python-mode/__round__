@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: __round__
-# key: _round
-# group: Special methods
-# --
-def __round__(self, ndigits=None):
-    return $0

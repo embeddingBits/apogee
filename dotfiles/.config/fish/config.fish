@@ -20,7 +20,6 @@ if not test -S "$SSH_AUTH_SOCK"
     end
 end
 
-set --export BUN_INSTALL "$HOME/.bun"
 set -Ux GOPATH $HOME/.local/go
 set -Ux GOBIN  $HOME/.local/go/bin
 fish_add_path  $GOBIN

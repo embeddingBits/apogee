@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: distinct
-# key: distinct
-# --
-${1:name} :: distinct {
-${0: $(indent-according-to-mode)}
-}

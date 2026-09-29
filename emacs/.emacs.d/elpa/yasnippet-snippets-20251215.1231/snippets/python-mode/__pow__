@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: __pow__
-# key: _pow
-# group: Special methods
-# --
-def __pow__(self, other, modulo=None):
-    return $0

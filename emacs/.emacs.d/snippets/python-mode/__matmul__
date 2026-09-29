@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: __matmul__
-# key: _matmul
-# group: Special methods
-# --
-def __matmul__(self, other):
-    return $0

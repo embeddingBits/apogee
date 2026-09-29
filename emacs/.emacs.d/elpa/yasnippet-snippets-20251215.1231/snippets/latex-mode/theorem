@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: theorem
-# key: thm
-# --
-\begin{thm}[${2:title}]
-  \label{thm:${1:label}}
-  $0
-\end{thm}

@@ -1,5 +1,5 @@
-function fetch --wraps='fastfetch -c ~/.config/fastfetch/small.jsonc --logo-color-1 blue --logo-color-2 red' --description 'alias fetch fastfetch -c ~/.config/fastfetch/small.jsonc --logo-color-1 blue --logo-color-2 red'
-    fastfetch -c ~/.config/fastfetch/small.jsonc --logo-color-1 blue --logo-color-2 red $argv
+function fetch --wraps=fastfetch
+    fastfetch -c ~/.config/fastfetch/small.jsonc --logo-color-1 blue --logo-color-2 red --logo ~/.config/fastfetch/custom.txt $argv
 end
 
 function ls --wraps=exa --wraps='exa --icons' --description 'alias ls exa --icons'
@@ -37,3 +37,7 @@ alias tnew="tmux new -s"
 alias tls="tmux ls"
 alias ta="tmux attach -t"
 alias td="tmux detach"
+
+# Agents
+alias oc="opencode"
+alias oc-c="opencode --continue"

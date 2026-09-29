@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: else if statement
-# key: elif
-# --
-else if (${1}) {
-     ${0}
-}

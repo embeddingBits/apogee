@@ -1,9 +1,0 @@
-* tuareg
-
-  Evil bindings for [[https://github.com/ocaml/tuareg][tuareg-mode]] (OCaml).
-
-** Key bindings
-
-   | Command            | Original  | Evil |
-   |--------------------+-----------+------|
-   | =tuareg-run-ocaml= | =C-c C-s= | =gz= |

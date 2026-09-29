@@ -1,5 +1,0 @@
-site
-src
-test
-Cargo.*
-justfile

@@ -1,6 +1,0 @@
-# -*- mode: gitconfig -*-
-[hook "magit-common-post-commit"]
-        event = post-commit
-        event = post-merge
-        event = post-rewrite
-        command = magit-run-git-hook magit-common-git-post-commit-functions

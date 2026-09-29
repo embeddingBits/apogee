@@ -2,10 +2,10 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true  
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+vim.cmd("set noexpandtab")
+vim.cmd("set tabstop=8")
+vim.cmd("set softtabstop=8")
+vim.cmd("set shiftwidth=8")
 vim.cmd("set scrolloff=6")
 
 ------------------------------ Lazy Neovim Setup -------------------------------

@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: João Diogo Duarte
-# name: axiomatized
-# key: axiomatized
-# expand-env: ((yas-indent-line 'fixed))
-# --
-axiomatized by $1.

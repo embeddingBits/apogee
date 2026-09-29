@@ -17,10 +17,10 @@ confirm-close-surface = false
 shell-integration-features = no-cursor
 
 # Font Settings
-font-size = 15
+font-size = 16
 
-font-family = JetBrainsMono Nerd Font
-font-style = semibold
+font-family = Iosevka Nerd Font
+font-style = regular
 font-style-bold = bold
 font-style-italic = italic
 font-style-bold-italic = bold italic

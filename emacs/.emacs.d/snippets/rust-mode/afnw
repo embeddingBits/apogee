@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: async fn name<T>(x: T) where T: Clone { ... }
-# key: afnw
-# --
-async fn ${1:name}<${2:T}>(${3:x: T}) where ${4:T: Clone} {
-    $0
-}

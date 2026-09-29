@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: set
-# key: set
-# contributor: Spenser Truex
-# --
-@set{${title},
-  entryset = {${entryset}}
-}

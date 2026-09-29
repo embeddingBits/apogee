@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: if (with initialization)
-# key: ifz
-# --
-if $1; $2 {
-${0: $(indent-according-to-mode)}
-}

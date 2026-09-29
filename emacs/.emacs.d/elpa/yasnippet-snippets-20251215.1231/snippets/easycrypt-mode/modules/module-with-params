@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: João Diogo Duarte
-# name: module-with-params
-# key: module-with-params
-# --
-module $1 ($2: $3) : $4 {
-
-}.

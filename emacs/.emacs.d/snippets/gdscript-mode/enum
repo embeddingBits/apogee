@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: enum
-# key: enum
-# group: definitions
-# --
-enum $1 {$2}

@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: defer if
-# key: dfri
-# --
-defer if $1 {
-${0: $(indent-according-to-mode)}
-}

@@ -24,8 +24,8 @@ ShellRoot {
     property color colMuted: "#928374"
     property int barHeight: 38
     property string fontFamily: "JetBrainsMono Nerd Font"
-    property string fontFamilyFallback: "JetBrainsMono Nerd Font"
-    property int barFontSize: 14
+    property string fontFamilyFallback: "Iosevka Nerd Font"
+    property int barFontSize: 16
     property int clockFontSize: barFontSize
     property int iconFontSize: barFontSize
     property int smallFontSize: barFontSize

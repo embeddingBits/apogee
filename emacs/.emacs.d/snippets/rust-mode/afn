@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: async fn name() { ... }
-# key: afn
-# --
-async fn ${1:name}($2) {
-    $0
-}
