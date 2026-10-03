@@ -96,7 +96,7 @@ window-rule {
 
 binds {
 
-    Super+Q { spawn "foot"; }
+    Super+Q { spawn "kitty"; }
     Super+Return { spawn "env" "GDK_BACKEND=wayland" "emacs"; }
     Super+R { spawn "fuzzel"; }
     Super+W { spawn "firefox"; }

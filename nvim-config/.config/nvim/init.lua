@@ -1,14 +1,14 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.cursorline = true  
+vim.opt.cursorline = true
 
 vim.cmd("set noexpandtab")
-vim.cmd("set tabstop=8")
-vim.cmd("set softtabstop=8")
-vim.cmd("set shiftwidth=8")
-vim.cmd("set scrolloff=6")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
+vim.cmd("set scrolloff=4")
 
------------------------------- Lazy Neovim Setup -------------------------------
+--- Lazy Neovim Setup
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -29,7 +29,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
------------------- Keybinds ------------------
+--- Keybinds
 
 vim.keymap.set('n', '<leader>n', "<Cmd>enew<CR>", {})
 vim.keymap.set('n', '<TAB>', "<Cmd>bnext<CR>", {})
@@ -42,6 +42,14 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 vim.keymap.set("n", "<leader>tc", ":w | !typst compile % %:r.pdf<CR>")
 
 require("lazy").setup("plugins")
+
+if vim.g.neovide then
+	vim.o.guifont = "RecMonoCasual Nerd Font Propo"
+	vim.api.nvim_set_hl(0, "Normal", {
+		bg = "#1d2021",
+		fg = "#ebdbb2",
+	})
+end
 
 require("notify").setup({
   background_colour = "#000000",

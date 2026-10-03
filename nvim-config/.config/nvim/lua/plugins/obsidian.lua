@@ -19,7 +19,7 @@ return {
             workspaces = {
                 {
                     name = "Personal",
-                    path = "~/org-notes/",
+                    path = "~/Obsidian-Notes/",
                 },
             },
         },
