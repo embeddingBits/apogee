@@ -28,3 +28,27 @@ id_ed25519
 
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 /graft/
+
+# Emacs — generated / cache / session files (do not commit, regenerable)
+emacs/.emacs.d/eln-cache/
+emacs/.emacs.d/elpa/
+emacs/.emacs.d/auto-save-list/
+emacs/.emacs.d/recentf
+emacs/.emacs.d/projects
+emacs/.emacs.d/config.el
+emacs/.emacs.d/**/*.elc
+emacs/.emacs.d/*~
+emacs/.emacs.d/#*
+emacs/.emacs.d/.#*
+emacs/.emacs.d/.cache/
+emacs/.emacs.d/var/
+emacs/.emacs.d/transient/
+emacs/.emacs.d/savehist
+emacs/.emacs.d/places
+emacs/.emacs.d/bookmarks
+emacs/.emacs.d/tramp
+emacs/.emacs.d/projectile.cache
+emacs/.emacs.d/.local/
+emacs/.emacs.d/.projectile
+emacs/.emacs.d/network-security.data
+emacs/.emacs.d/history
