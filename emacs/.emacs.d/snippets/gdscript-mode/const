@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: const
-# key: const
-# group: definitions
-# --
-const ${1:name} = $0
