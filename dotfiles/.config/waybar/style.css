@@ -50,6 +50,9 @@ window#waybar {
     border-bottom: 2px solid transparent;
     border-radius: 0;
     color: #ebdbb2;
+    /* Make hover/state changes feel reactive rather than instant. */
+    transition: background-color 150ms ease-out,
+                color 150ms ease-out;
 }
 
 #custom-launcher { border-bottom-color: #fabd2f; min-width: 16px; }
@@ -121,6 +124,12 @@ window#waybar.empty #window {
     color: #ebdbb2;
     font-weight: 600;
     box-shadow: none;
+    /* Smoothly react to focused/occupied/urgent class changes. */
+    transition: background-color 180ms ease-out,
+                color 180ms ease-out,
+                border-bottom-color 180ms ease-out,
+                min-width 180ms ease-out,
+                padding 180ms ease-out;
 }
 
 #workspaces button:first-child {
