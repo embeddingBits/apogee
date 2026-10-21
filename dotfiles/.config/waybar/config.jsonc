@@ -1,0 +1,152 @@
+{
+    // Geometry mirrors quickshell/config/bar.json
+    "layer": "top",
+    "position": "top",
+    "height": 45,
+    "spacing": 7,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "reload_style_on_change": true,
+
+    "modules-left": [
+        "custom/launcher",
+        "niri/workspaces",
+        "niri/window"
+    ],
+    "modules-center": [
+        "clock",
+        "mpris"
+    ],
+    "modules-right": [
+        "tray",
+        "bluetooth",
+        "wireplumber",
+        "network",
+        "memory",
+        "battery",
+        "custom/power"
+    ],
+
+    "custom/launcher": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "fuzzel"
+    },
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "all-outputs": false,
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "focused": "󰝥",
+            "default": "•"
+        }
+    },
+
+    "niri/window": {
+        "format": "<span color='#928374'>󰖲</span>  {title}",
+        "max-length": 32
+    },
+
+    "clock": {
+        "format": "{:%A %I:%M:%S %p}",
+        "interval": 1,
+        "on-click": "zenity --calendar",
+        "tooltip-format": "<span color='#83a598'><b>{:%B %Y}</b></span>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#83a598'><b>{}</b></span>",
+                "weekdays": "<span color='#928374'><b>{}</b></span>",
+                "days": "<span color='#ebdbb2'>{}</span>",
+                "today": "<span color='#d79221'><b>{}</b></span>"
+            }
+        }
+    },
+
+    // Mirrors the MPRIS strip embedded in the quickshell center clock.
+    "mpris": {
+        "format": "<span color='#928374'>|</span>  <span color='#928374'>󰏤</span> {dynamic}",
+        "format-playing": "<span color='#928374'>|</span>  <span color='#d79221'>󰝚</span> {dynamic}",
+        "format-paused": "<span color='#928374'>|</span>  <span color='#928374'>󰏤</span> {dynamic}",
+        "dynamic-order": ["artist", "title"],
+        "dynamic-separator": " - ",
+        "dynamic-len": 32,
+        "artist-len": 14,
+        "title-len": 18,
+        "ellipsis": "…"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 2
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "tooltip-format": "{controller_alias}\n{num_connections} connected",
+        "on-click": "bash -c '~/.config/fuzzel/fuzzel-bluetooth.sh'"
+    },
+
+    "wireplumber": {
+        "format": "{icon} <span font_weight='600'>{volume}%</span>",
+        "format-muted": "󰝟 <span font_weight='600'>{volume}%</span>",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "tooltip-format": "{node_name}"
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰈀",
+        "format-linked": "{icon}",
+        "format-disconnected": "󰤯",
+        "format-disabled": "󰤮",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "on-click": "foot -e nmtui"
+    },
+
+    "memory": {
+        "interval": 3,
+        "format": "󰍛 <span font_weight='600'>{used:0.1f}G</span>",
+        "tooltip-format": "RAM: {used:0.1f} / {total:0.1f} GB ({percentage}%)"
+    },
+
+    "battery": {
+        "interval": 5,
+        "states": {
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} <span font_weight='600'>{capacity}%</span>",
+        "format-charging": "󰂄 <span font_weight='600'>{capacity}%</span>",
+        "format-plugged": "󰂄 <span font_weight='600'>{capacity}%</span>",
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰁿", "󰂀", "󰁹"]
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip": false,
+        "on-click": "wlogout"
+    }
+}

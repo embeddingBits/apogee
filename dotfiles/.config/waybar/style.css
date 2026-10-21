@@ -1,0 +1,178 @@
+/* Port of quickshell/config/Theme.qml and modules/bar widgets */
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background-color: #1d2021;
+    color: #ebdbb2;
+    /* hairline separator drawn at the bottom of the quickshell bar */
+    box-shadow: inset 0 -1px rgba(146, 131, 116, 0.25);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+/* bar.json: padding-left/padding-right = 8 */
+.modules-left  { margin-left: 8px; }
+.modules-right { margin-right: 8px; }
+
+/* Every module is vertically centred with a 2px per-module underline
+   at its bottom edge. */
+#custom-launcher,
+#window,
+#clock,
+#mpris,
+#tray,
+#bluetooth,
+#wireplumber,
+#network,
+#memory,
+#battery,
+#custom-power {
+    margin: 9px 0;
+    padding: 0 6px;
+    min-height: 25px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    color: #ebdbb2;
+}
+
+#custom-launcher { border-bottom-color: #fabd2f; min-width: 16px; }
+#window          { border-bottom-color: #d5c4a1; }
+#clock {
+    border-bottom-color: #83a598;
+    font-weight: 700;
+    /* CenterClock adds 14px of horizontal padding per side */
+    padding: 0 14px;
+}
+/* Overlap the clock's right padding so the "|" separator keeps the same
+   8px gap it has in CenterClock, and both underlines read as one line. */
+#mpris {
+    border-bottom-color: #83a598;
+    margin-left: -21px;
+    padding: 0 14px 0 8px;
+}
+#tray            { border-bottom-color: #a89984; }
+#bluetooth       { border-bottom-color: #d3869b; min-width: 16px; }
+#wireplumber     { border-bottom-color: #8ec07c; min-width: 52px; }
+#network         { border-bottom-color: #458588; min-width: 16px; }
+#memory          { border-bottom-color: #689d6a; min-width: 66px; }
+#battery         { border-bottom-color: #b8bb26; min-width: 46px; }
+#custom-power    { border-bottom-color: #fb4934; min-width: 18px; }
+
+#custom-launcher:hover,
+#window:hover,
+#clock:hover,
+#mpris:hover,
+#tray:hover,
+#bluetooth:hover,
+#wireplumber:hover,
+#network:hover,
+#memory:hover,
+#battery:hover {
+    background-color: rgba(235, 219, 178, 0.07);
+}
+
+#custom-power:hover {
+    background-color: rgba(215, 146, 33, 0.12);
+    color: #d79221;
+}
+
+/* niri/window hides its label when no window is focused; collapse the
+   leftover module box as well. */
+window#waybar.empty #window {
+    margin: 0;
+    padding: 0;
+    border: none;
+    min-width: 0;
+}
+
+#workspaces {
+    margin: 9px 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+#workspaces button {
+    margin: 0 0 0 6px;
+    padding: 0 4px;
+    min-width: 18px;
+    min-height: 25px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(254, 128, 25, 0.85);
+    border-radius: 0;
+    color: #ebdbb2;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+#workspaces button:first-child {
+    margin-left: 0;
+}
+
+#workspaces button.empty {
+    color: rgba(235, 219, 178, 0.45);
+    border-bottom-color: rgba(254, 128, 25, 0.35);
+}
+
+#workspaces button.active {
+    color: #ebdbb2;
+    border-bottom-color: rgba(254, 128, 25, 0.85);
+}
+
+#workspaces button.focused {
+    color: #d79221;
+    background-color: rgba(215, 146, 33, 0.10);
+    border-bottom-color: #fe8019;
+    font-weight: 700;
+    min-width: 22px;
+}
+
+#workspaces button:hover {
+    background-color: rgba(235, 219, 178, 0.08);
+}
+
+#workspaces button.empty:hover {
+    color: rgba(235, 219, 178, 0.45);
+}
+
+#workspaces button.urgent {
+    color: #fbf1c7;
+    background-color: #ea6962;
+    border-bottom-color: #ea6962;
+}
+
+#battery.critical:not(.charging) {
+    color: #cc241d;
+}
+
+tooltip {
+    background-color: #1d2021;
+    border: 1px solid #d79221;
+    border-radius: 4px;
+    color: #ebdbb2;
+}
+
+tooltip label {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 10px;
+    color: #ebdbb2;
+    padding: 2px;
+}
