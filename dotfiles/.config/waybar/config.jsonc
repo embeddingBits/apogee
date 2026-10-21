@@ -62,7 +62,7 @@
     "clock": {
         "format": "{:%A %I:%M:%S %p}",
         "interval": 1,
-        "on-click": "zenity --calendar",
+        "on-click": "bash -c '~/.config/waybar/scripts/quickshell-calendar.sh'",
         "tooltip-format": "<span color='#83a598'><b>{:%B %Y}</b></span>\n<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "month",
