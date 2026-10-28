@@ -127,13 +127,13 @@
     },
 
     "memory": {
-        "interval": 3,
+        "interval": 0,
         "format": "󰍛 <span font_weight='600'>{used:0.1f}G</span>",
         "tooltip-format": "RAM: {used:0.1f} / {total:0.1f} GB ({percentage}%)"
     },
 
     "battery": {
-        "interval": 5,
+        "interval": 1,
         "states": {
             "warning": 30,
             "critical": 20

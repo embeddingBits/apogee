@@ -1,0 +1,20 @@
+@import url("/home/ebits/.config/waybar/style.css");
+
+/* MangoWM's focused-window module is a custom module, so it needs its own
+   id instead of the #window rules used by niri/window. */
+#custom-window {
+    margin: 9px 0;
+    padding: 0 6px;
+    min-height: 25px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #d5c4a1;
+    border-radius: 0;
+    color: #ebdbb2;
+    transition: background-color 150ms ease-out,
+                color 150ms ease-out;
+}
+
+#custom-window:hover {
+    background-color: rgba(235, 219, 178, 0.07);
+}

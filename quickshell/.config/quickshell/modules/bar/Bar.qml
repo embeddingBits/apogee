@@ -33,6 +33,10 @@ PanelWindow {
         blockLoading: true
     }
 
+	Variants {
+		variants: Quickshell.screens
+	}
+
     // Use function call text() as per Quickshell docs: FileView.text()
     property string manifestText: manifestFile.loaded ? manifestFile.text() : ""
 

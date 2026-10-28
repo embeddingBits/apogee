@@ -1,8 +1,20 @@
 #!/bin/sh
 
-# Get the name of the focused output from riverctl
-# It usually outputs something like "HDMI-A-1 (focused)"
-FOCUS=$(riverctl list-outputs | grep '(focused)' | awk '{print $1}')
+# Determine the focused output so the launcher can use monitor-specific sizing.
+case "${XDG_CURRENT_DESKTOP:-}" in
+    mango)
+        FOCUS=$(mmsg get all-monitors 2>/dev/null \
+            | jq -r '.monitors[] | select(.active) | .name' 2>/dev/null \
+            | head -n 1)
+        ;;
+    niri)
+        FOCUS=$(niri msg --json focused-output 2>/dev/null \
+            | jq -r '.name // empty' 2>/dev/null)
+        ;;
+    *)
+        FOCUS=""
+        ;;
+esac
 
 if [ "$FOCUS" = "HDMI-A-1" ]; then
     # Specific size for your 24" Dell Monitor

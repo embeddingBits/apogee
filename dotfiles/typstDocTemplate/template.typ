@@ -13,11 +13,11 @@
 #let module(title, body) = [
   #set page(
     header: [
-    #title
-    #h(1fr)
-  Chapter 
-    #line(length: 100%)
-  ],
+      #title
+      #h(1fr)
+      Chapter 
+      #line(length: 100%)
+    ],
   )
   = #title
   #v(10pt)

@@ -7,7 +7,7 @@ if [ -z "$QUERY" ]; then
 fi
 
 if [[ "$QUERY" =~ ^(https?|ftp):// ]] || [[ "$QUERY" =~ ^[^\ ]+\.[^\ ]+ ]]; then
-    brave --new-tab "$QUERY"
+	helium-browser "$QUERY"
 else
-    brave --new-tab "https://www.google.com/search?q=$QUERY"
+    helium-browser "https://www.google.com/search?q=$QUERY"
 fi

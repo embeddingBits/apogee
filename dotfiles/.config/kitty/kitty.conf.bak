@@ -7,11 +7,12 @@ confirm_os_window_close 0
 cursor_shape block
 
 # Window Padding
-window_padding_width 8 16 
+window_padding_width 2 16 
 update_check_interval 0
+background_opacity 0.9
 shell_integration disabled
 
-font_size       17
+font_size       15
 
 # BEGIN_KITTY_FONTS
 font_family      family="Iosevka Nerd Font"

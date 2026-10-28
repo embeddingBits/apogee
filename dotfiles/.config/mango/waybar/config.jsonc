@@ -1,0 +1,47 @@
+{
+    // MangoWM-specific Waybar overrides.
+    // The shared bar geometry, clock, tray, audio, network, battery and
+    // styling come from ~/.config/waybar/config.jsonc and style.css.
+    //
+    // Waybar 0.15 (the current release) does not ship the newer mango/*
+    // modules yet, so tags come from the ext-workspaces protocol that
+    // MangoWM implements, and the focused title from a small mmsg script.
+    "include": ["$HOME/.config/waybar/config.jsonc"],
+
+    "modules-left": [
+        "custom/launcher",
+        "ext/workspaces",
+        "custom/window",
+    ],
+
+    "ext/workspaces": {
+        "format": "{icon}",
+        "sort-by-id": true,
+        "all-outputs": false,
+        "ignore-hidden": false,
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "󰝥",
+            "urgent": "!",
+            "empty": "•",
+            "default": "•"
+        }
+    },
+
+    "custom/window": {
+        "exec": "/home/ebits/.config/mango/waybar/window-title.sh",
+        "interval": 1,
+        "format": "{}",
+        "escape": true,
+        "tooltip": false
+    }
+}
