@@ -1,4 +1,4 @@
-#set text(14pt)
+#set text(font: "New Computer Modern", size: 14pt)
 #set heading(numbering: "1.") 
 
 #align(center+horizon)[

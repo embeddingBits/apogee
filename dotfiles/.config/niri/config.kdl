@@ -54,6 +54,7 @@ window-rule {
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations { 
+	off
 }
 
 // Window rules 
@@ -166,7 +167,7 @@ binds {
 }
 
 
-spawn-at-startup "qs"
+spawn-at-startup "waybar"
 spawn-at-startup "swaybg" "-i" "/home/ebits/Pictures/wallpapers/sushi.jpg"
 spawn-at-startup "fnott"
 spawn-at-startup "xwayland-satellite"

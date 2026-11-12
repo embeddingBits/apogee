@@ -1,3 +1,0 @@
-#!/bin/sh
-source "$HOME/.config/river/env.sh"
-exec rill
