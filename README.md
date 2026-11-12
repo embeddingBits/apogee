@@ -3,7 +3,7 @@
 # Software
 
 - **Distro**: [Arch Linux](https://archlinux.org/)
-- **Window manager**: [Niri](https://niri-wm.github.io/niri/index.html)
+- **Window manager**: [Niri](https://niri-wm.github.io/niri/index.html) and [MangoWM](https://mangowm.github.io/)
 - **Top bar**: [Quickshell](https://quickshell.org)
 - **Terminal**: [foot](https://codeberg.org/dnkl/foot)
 - **Text editor**: [Emacs](https://www.gnu.org/software/emacs/) and [Neovim](https://neovim.io/)
