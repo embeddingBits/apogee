@@ -3,29 +3,35 @@
     // The shared bar geometry, clock, tray, audio, network, battery and
     // styling come from ~/.config/waybar/config.jsonc and style.css.
     //
-    // Waybar 0.15 (the current release) does not ship the newer mango/*
-    // modules yet, so tags come from the ext-workspaces protocol that
-    // MangoWM implements, and the focused title from a small mmsg script.
+    // Waybar 0.16.0 (CachyOS build) ships native mango/* IPC modules, so we
+    // use mango/workspaces and mango/window directly instead of the generic
+    // ext-workspaces protocol and the 1-second mmsg polling script. The
+    // native modules subscribe to mango's `watch all-monitors` event stream
+    // and reconnect automatically if the IPC socket drops, which fixes the
+    // "tags disappear after a bar restart" problem.
     "include": ["$HOME/.config/waybar/config.jsonc"],
 
     "modules-left": [
         "custom/launcher",
-        "ext/workspaces",
-        "custom/window",
+        "mango/workspaces",
+        "mango/window"
     ],
 
-    "ext/workspaces": {
+    "mango/workspaces": {
         "format": "{icon}",
-        "sort-by-id": true,
-        "all-outputs": false,
-        "ignore-hidden": false,
         "on-click": "activate",
+        "on-click-right": "toggle",
         "format-icons": {
             "1": "1",
             "2": "2",
             "3": "3",
             "4": "4",
             "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
             "active": "󰝥",
             "urgent": "!",
             "empty": "•",
@@ -33,11 +39,10 @@
         }
     },
 
-    "custom/window": {
-        "exec": "/home/ebits/.config/mango/waybar/window-title.sh",
-        "interval": 1,
-        "format": "{}",
-        "escape": true,
-        "tooltip": false
+    // Native focused-window module. Hides itself when no window is focused
+    // and updates on IPC events (no polling).
+    "mango/window": {
+        "format": "<span color='#928374'>󰖲</span>  {title}",
+        "max-length": 32
     }
 }

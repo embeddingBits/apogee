@@ -10,6 +10,9 @@
     "margin-right": 0,
     "reload_style_on_change": true,
 
+    // niri/* modules for niri sessions (niri spawns plain `waybar`).
+    // Mango sessions override modules-left in ~/.config/mango/waybar/config.jsonc
+    // with the native mango/* IPC modules.
     "modules-left": [
         "custom/launcher",
         "niri/workspaces",
@@ -126,8 +129,11 @@
         "on-click": "foot -e nmtui"
     },
 
+    // NOTE: never use "interval": 0 on periodic modules. On waybar <= 0.15 it
+    // became a ~1000 Hz busy loop that starved the GTK main loop and froze the
+    // whole bar (fixed in 0.16.0, but an explicit interval is safer).
     "memory": {
-        "interval": 0,
+        "interval": 5,
         "format": "󰍛 <span font_weight='600'>{used:0.1f}G</span>",
         "tooltip-format": "RAM: {used:0.1f} / {total:0.1f} GB ({percentage}%)"
     },

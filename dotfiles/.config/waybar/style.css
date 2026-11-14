@@ -96,8 +96,8 @@ window#waybar {
     color: #d79221;
 }
 
-/* niri/window hides its label when no window is focused; collapse the
-   leftover module box as well. */
+/* The window module (niri/window or mango/window) hides its label when no
+   window is focused; collapse the leftover module box as well. */
 window#waybar.empty #window {
     margin: 0;
     padding: 0;
