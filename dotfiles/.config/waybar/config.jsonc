@@ -1,5 +1,4 @@
 {
-    // Geometry mirrors quickshell/config/bar.json
     "layer": "top",
     "position": "top",
     "height": 45,
@@ -10,9 +9,6 @@
     "margin-right": 0,
     "reload_style_on_change": true,
 
-    // niri/* modules for niri sessions (niri spawns plain `waybar`).
-    // Mango sessions override modules-left in ~/.config/mango/waybar/config.jsonc
-    // with the native mango/* IPC modules.
     "modules-left": [
         "custom/launcher",
         "niri/workspaces",

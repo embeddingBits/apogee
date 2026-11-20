@@ -1,5 +1,5 @@
 [user]
-      name = Amiitesh
+      name = Amiitesh Pradeep Kumar
       email = tspamiitesh@gmail.com
 
 [core]
@@ -18,6 +18,14 @@
 
 [url "git@github.com:"]
       insteadOf = https://github.com/
-
-[url "git@codeberg.org:"]
-      insteadOf = https://codeberg.org/
+[sendemail]
+	smtpserver = ://gmail.com
+	smtpuser = tspamiitesh@gmail.com
+	smtpencryption = tls
+	smtpserverport = 587
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
