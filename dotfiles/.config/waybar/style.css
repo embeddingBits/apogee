@@ -1,8 +1,7 @@
-/* Port of quickshell/config/Theme.qml and modules/bar widgets */
 
 * {
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     border: none;
     border-radius: 0;
@@ -11,30 +10,35 @@
 }
 
 window#waybar {
-    background-color: #1d2021;
+    background-color: transparent;
     color: #ebdbb2;
-    /* hairline separator drawn at the bottom of the quickshell bar */
-    box-shadow: inset 0 -1px rgba(146, 131, 116, 0.25);
+    border: none;
+    box-shadow: none;
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-    background: transparent;
-    margin: 0;
-    padding: 0;
+    background-color: #1d2021;
+    border: 2px solid #7c6f64;
+    border-radius: 0;
+    margin: 5px 8px;
+    padding: 0 5px;
+    box-shadow: none;
 }
 
-/* bar.json: padding-left/padding-right = 8 */
-.modules-left  { margin-left: 8px; }
-.modules-right { margin-right: 8px; }
+.modules-left {
+    margin-left: 10px;
+}
 
-/* Every module is vertically centred with a 2px per-module underline
-   at its bottom edge. */
-#custom-launcher,
-#window,
+.modules-right {
+    margin-right: 10px;
+}
+
+#custom-menu,
 #clock,
 #mpris,
+#window,
 #tray,
 #bluetooth,
 #wireplumber,
@@ -42,141 +46,149 @@ window#waybar {
 #memory,
 #battery,
 #custom-power {
-    margin: 9px 0;
-    padding: 0 6px;
+    margin: 2px 3px;
+    padding: 1px 8px;
     min-height: 25px;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
+
+    background-color: #282828;
+    border: 2px solid #7c6f64;
     border-radius: 0;
+
     color: #ebdbb2;
-    /* Make hover/state changes feel reactive rather than instant. */
+
     transition: background-color 150ms ease-out,
+                border-color 150ms ease-out,
                 color 150ms ease-out;
 }
 
-#custom-launcher { border-bottom-color: #fabd2f; min-width: 16px; }
-#window          { border-bottom-color: #d5c4a1; }
-#clock {
-    border-bottom-color: #83a598;
-    font-weight: 700;
-    /* CenterClock adds 14px of horizontal padding per side */
-    padding: 0 14px;
+/* Menu */
+#custom-menu {
+    color: #fabd2f;
 }
-/* Overlap the clock's right padding so the "|" separator keeps the same
-   8px gap it has in CenterClock, and both underlines read as one line. */
-#mpris {
-    border-bottom-color: #83a598;
-    margin-left: -21px;
-    padding: 0 14px 0 8px;
-}
-#tray            { border-bottom-color: #a89984; }
-#bluetooth       { border-bottom-color: #d3869b; min-width: 16px; }
-#wireplumber     { border-bottom-color: #8ec07c; min-width: 52px; }
-#network         { border-bottom-color: #458588; min-width: 16px; }
-#memory          { border-bottom-color: #689d6a; min-width: 66px; }
-#battery         { border-bottom-color: #b8bb26; min-width: 46px; }
-#custom-power    { border-bottom-color: #fb4934; min-width: 18px; }
 
-#custom-launcher:hover,
-#window:hover,
+/* Clock */
+#clock {
+    font-weight: 700;
+}
+
+/* Music */
+#mpris {
+    border-color: #7c6f64;
+}
+
+/* Current window */
+#window {
+    color: #ebdbb2;
+    font-weight: 600;
+    padding: 1px 9px;
+}
+
+#window.empty {
+    color: #928374;
+}
+
+/* System tray */
+#tray {
+    padding: 1px 7px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+/* Power */
+#custom-power {
+    color: #fb4934;
+}
+
+/* Hover effects */
+#custom-menu:hover,
 #clock:hover,
 #mpris:hover,
+#window:hover,
 #tray:hover,
 #bluetooth:hover,
 #wireplumber:hover,
 #network:hover,
 #memory:hover,
-#battery:hover {
-    background-color: rgba(235, 219, 178, 0.07);
-}
-
+#battery:hover,
 #custom-power:hover {
-    background-color: rgba(215, 146, 33, 0.12);
-    color: #d79221;
+    background-color: #3c3836;
+    border-color: #bdae93;
+    color: #fabd2f;
 }
 
-/* The window module (niri/window or mango/window) hides its label when no
-   window is focused; collapse the leftover module box as well. */
-window#waybar.empty #window {
-    margin: 0;
-    padding: 0;
-    border: none;
-    min-width: 0;
-}
-
+/* Workspace switcher outer box */
 #workspaces {
-    margin: 9px 0;
-    padding: 0;
-    background: transparent;
-    border: none;
+    margin: 2px 3px;
+    padding: 1px 5px;
+    background-color: #282828;
+    border: 2px solid #7c6f64;
+    border-radius: 0;
+    box-shadow: none;
 }
 
+/* Workspace buttons */
 #workspaces button {
-    margin: 0 0 0 6px;
+    margin: 0 2px;
     padding: 0 4px;
-    min-width: 18px;
+    min-width: 20px;
     min-height: 25px;
+
     background: transparent;
     border: none;
-    border-bottom: 2px solid rgba(254, 128, 25, 0.85);
     border-radius: 0;
-    color: #ebdbb2;
+
+    color: #928374;
     font-weight: 600;
     box-shadow: none;
-    /* Smoothly react to focused/occupied/urgent class changes. */
-    transition: background-color 180ms ease-out,
-                color 180ms ease-out,
-                border-bottom-color 180ms ease-out,
-                min-width 180ms ease-out,
-                padding 180ms ease-out;
+
+    transition: color 180ms ease-out;
 }
 
-#workspaces button:first-child {
-    margin-left: 0;
-}
-
+/* Empty workspace */
 #workspaces button.empty {
-    color: rgba(235, 219, 178, 0.45);
-    border-bottom-color: rgba(254, 128, 25, 0.35);
+    color: #928374;
+    background: transparent;
+    border: none;
 }
 
-#workspaces button.active {
-    color: #ebdbb2;
-    border-bottom-color: rgba(254, 128, 25, 0.85);
-}
-
+/* Active workspace */
+#workspaces button.active,
 #workspaces button.focused {
-    color: #d79221;
-    background-color: rgba(215, 146, 33, 0.10);
-    border-bottom-color: #fe8019;
+    color: #fabd2f;
+    background: transparent;
+    border: none;
     font-weight: 700;
-    min-width: 22px;
 }
 
+/* Workspace hover */
 #workspaces button:hover {
-    background-color: rgba(235, 219, 178, 0.08);
+    color: #ebdbb2;
+    background: transparent;
+    border: none;
 }
 
-#workspaces button.empty:hover {
-    color: rgba(235, 219, 178, 0.45);
-}
-
+/* Urgent workspace */
 #workspaces button.urgent {
     color: #fbf1c7;
-    background-color: #ea6962;
-    border-bottom-color: #ea6962;
+    background: transparent;
+    border: none;
 }
 
+/* Battery critical */
 #battery.critical:not(.charging) {
     color: #cc241d;
+    border-color: #cc241d;
 }
 
+/* Tooltips */
 tooltip {
-    background-color: #1d2021;
-    border: 1px solid #d79221;
-    border-radius: 4px;
+    background-color: #282828;
+    border: 2px solid #7c6f64;
+    border-radius: 0;
     color: #ebdbb2;
+    padding: 6px;
 }
 
 tooltip label {
@@ -185,3 +197,4 @@ tooltip label {
     color: #ebdbb2;
     padding: 2px;
 }
+

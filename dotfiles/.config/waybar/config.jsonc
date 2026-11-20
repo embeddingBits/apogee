@@ -1,8 +1,9 @@
+
 {
     "layer": "top",
     "position": "top",
     "height": 45,
-    "spacing": 7,
+    "spacing": 0,
     "margin-top": 0,
     "margin-bottom": 0,
     "margin-left": 0,
@@ -10,14 +11,16 @@
     "reload_style_on_change": true,
 
     "modules-left": [
-        "custom/launcher",
-        "niri/workspaces",
-        "niri/window"
+        "custom/menu",
+        "mango/workspaces",
+        "mango/window"
     ],
+
     "modules-center": [
         "clock",
         "mpris"
     ],
+
     "modules-right": [
         "tray",
         "bluetooth",
@@ -28,34 +31,28 @@
         "custom/power"
     ],
 
-    "custom/launcher": {
-        "format": "",
+    "custom/menu": {
+        "format": " ",
         "tooltip": false,
         "on-click": "fuzzel"
     },
 
-    "niri/workspaces": {
+    "mango/workspaces": {
         "format": "{icon}",
-        "all-outputs": false,
+        "on-click": "activate",
+        "on-click-right": "toggle",
         "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "10": "10",
-            "focused": "󰝥",
-            "default": "•"
+            "active": "",
+            "empty": "",
+            "occupied": "",
+            "default": ""
         }
     },
 
-    "niri/window": {
-        "format": "<span color='#928374'>󰖲</span>  {title}",
-        "max-length": 32
+    "mango/window": {
+        "format": "{title}",
+        "max-length": 40,
+        "icon": true
     },
 
     "clock": {
@@ -77,12 +74,14 @@
         }
     },
 
-    // Mirrors the MPRIS strip embedded in the quickshell center clock.
     "mpris": {
         "format": "<span color='#928374'>|</span>  <span color='#928374'>󰏤</span> {dynamic}",
         "format-playing": "<span color='#928374'>|</span>  <span color='#d79221'>󰝚</span> {dynamic}",
         "format-paused": "<span color='#928374'>|</span>  <span color='#928374'>󰏤</span> {dynamic}",
-        "dynamic-order": ["artist", "title"],
+        "dynamic-order": [
+            "artist",
+            "title"
+        ],
         "dynamic-separator": " - ",
         "dynamic-len": 32,
         "artist-len": 14,
@@ -92,7 +91,8 @@
 
     "tray": {
         "icon-size": 16,
-        "spacing": 2
+        "spacing": 6,
+        "show-passive-items": false
     },
 
     "bluetooth": {
@@ -106,9 +106,13 @@
     },
 
     "wireplumber": {
-        "format": "{icon} <span font_weight='600'>{volume}%</span>",
+        "format": "{icon}  <span font_weight='600'>{volume}%</span>",
         "format-muted": "󰝟 <span font_weight='600'>{volume}%</span>",
-        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "format-icons": [
+            "󰕿",
+            "󰖀",
+            "󰕾"
+        ],
         "scroll-step": 5,
         "on-click": "pavucontrol",
         "tooltip-format": "{node_name}"
@@ -116,21 +120,24 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "{icon}",
+        "format-wifi": "{icon}  {essid}",
         "format-ethernet": "󰈀",
         "format-linked": "{icon}",
         "format-disconnected": "󰤯",
         "format-disabled": "󰤮",
-        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
         "on-click": "foot -e nmtui"
     },
 
-    // NOTE: never use "interval": 0 on periodic modules. On waybar <= 0.15 it
-    // became a ~1000 Hz busy loop that starved the GTK main loop and froze the
-    // whole bar (fixed in 0.16.0, but an explicit interval is safer).
     "memory": {
         "interval": 5,
-        "format": "󰍛 <span font_weight='600'>{used:0.1f}G</span>",
+        "format": "󰍛   <span font_weight='600'>{used:0.1f}G</span>",
         "tooltip-format": "RAM: {used:0.1f} / {total:0.1f} GB ({percentage}%)"
     },
 
@@ -140,10 +147,17 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon} <span font_weight='600'>{capacity}%</span>",
+        "format": "{icon}  <span font_weight='600'>{capacity}%</span>",
         "format-charging": "󰂄 <span font_weight='600'>{capacity}%</span>",
         "format-plugged": "󰂄 <span font_weight='600'>{capacity}%</span>",
-        "format-icons": ["󰁺", "󰁼", "󰁾", "󰁿", "󰂀", "󰁹"]
+        "format-icons": [
+            "󰁺",
+            "󰁼",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰁹"
+        ]
     },
 
     "custom/power": {
@@ -152,3 +166,4 @@
         "on-click": "wlogout"
     }
 }
+
