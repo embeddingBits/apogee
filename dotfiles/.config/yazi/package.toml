@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "e95c7b3"
-hash = "3996fc74044bc44144b323686f887e1"
+rev = "1ef5fe0"
+hash = "17ebde15c4349f90aedbc45984b98db2"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:zoom"
-rev = "e95c7b3"
-hash = "4a47a9cd4d8b3a963cb4cc593664b77e"
+rev = "1ef5fe0"
+hash = "558bbb58e3dd36d488280a8f10e7b904"
 
 [flavor]
 deps = []
