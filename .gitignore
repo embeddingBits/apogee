@@ -6,7 +6,6 @@ state
 sticker.sql
 fish_variables
 
-# SSH keys and sensitive files - never commit
 dotfiles/.ssh/git
 dotfiles/.ssh/git.pub
 dotfiles/.ssh/known_hosts
@@ -24,12 +23,7 @@ id_ed25519
 *.pem
 *.key
 
-
-
-# graft's local graph cache — regenerable, not committed (run `graft build`).
-/graft/
-
-# Emacs — generated / cache / session files (do not commit, regenerable)
+# Emacs
 emacs/.emacs.d/eln-cache/
 emacs/.emacs.d/elpa/
 emacs/.emacs.d/auto-save-list/
@@ -52,3 +46,5 @@ emacs/.emacs.d/.local/
 emacs/.emacs.d/.projectile
 emacs/.emacs.d/network-security.data
 emacs/.emacs.d/history
+
+*.bak

@@ -76,8 +76,8 @@
 
     "mpris": {
         "format": "<span color='#928374'>|</span>  <span color='#928374'>󰏤</span> {dynamic}",
-        "format-playing": "<span color='#928374'>|</span>  <span color='#d79221'>󰝚</span> {dynamic}",
-        "format-paused": "<span color='#928374'>|</span>  <span color='#928374'>󰏤</span> {dynamic}",
+        "format-playing": "<span color='#d79221'>󰝚</span> {dynamic}",
+        "format-paused": "<span color='#928374'>󰏤</span> {dynamic}",
         "dynamic-order": [
             "artist",
             "title"
@@ -147,6 +147,10 @@
             "warning": 30,
             "critical": 20
         },
+		"events": {
+			"on-discharging-warning": "notify-send -u normal 'Low Battery' 'Battery is at or below 30%'",
+			"on-discharging-critical": "notify-send -u critical 'Critical Battery' 'Plug in your charger soon'"
+		},
         "format": "{icon}  <span font_weight='600'>{capacity}%</span>",
         "format-charging": "󰂄 <span font_weight='600'>{capacity}%</span>",
         "format-plugged": "󰂄 <span font_weight='600'>{capacity}%</span>",
