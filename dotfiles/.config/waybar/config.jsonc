@@ -32,22 +32,15 @@
     ],
 
     "custom/menu": {
-        "format": " ",
+        "format": "<span color='#d79921'></span>",
         "tooltip": false,
         "on-click": "fuzzel"
     },
 
-    "mango/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "on-click-right": "toggle",
-        "format-icons": {
-            "active": "",
-            "empty": "",
-            "occupied": "",
-            "default": ""
-        }
-    },
+	"mango/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate"
+	},
 
     "mango/window": {
         "format": "{title}",
@@ -56,7 +49,7 @@
     },
 
     "clock": {
-        "format": "{:%A %I:%M:%S %p}",
+        "format": "<span color='#689d6a'></span> {:%A %I:%M:%S %p}",
         "interval": 1,
         "on-click": "bash -c '~/.config/waybar/scripts/quickshell-calendar.sh'",
         "tooltip-format": "<span color='#83a598'><b>{:%B %Y}</b></span>\n<tt><small>{calendar}</small></tt>",
@@ -69,14 +62,14 @@
                 "months": "<span color='#83a598'><b>{}</b></span>",
                 "weekdays": "<span color='#928374'><b>{}</b></span>",
                 "days": "<span color='#ebdbb2'>{}</span>",
-                "today": "<span color='#d79221'><b>{}</b></span>"
+                "today": "<span color='#d79921'><b>{}</b></span>"
             }
         }
     },
 
     "mpris": {
-        "format": "<span color='#928374'>|</span>  <span color='#928374'>󰏤</span> {dynamic}",
-        "format-playing": "<span color='#d79221'>󰝚</span> {dynamic}",
+        "format": "<span color='#b16286'>󰏤</span> {dynamic}",
+        "format-playing": "<span color='#b16286'>󰝚</span> {dynamic}",
         "format-paused": "<span color='#928374'>󰏤</span> {dynamic}",
         "dynamic-order": [
             "artist",
@@ -89,25 +82,19 @@
         "ellipsis": "…"
     },
 
-    "tray": {
-        "icon-size": 16,
-        "spacing": 6,
-        "show-passive-items": false
-    },
-
     "bluetooth": {
-        "format": "󰂯",
-        "format-on": "󰂯",
-        "format-off": "󰂲",
-        "format-disabled": "󰂲",
-        "format-connected": "󰂱",
+        "format": "<span color='#458588'>󰂯</span>",
+        "format-on": "<span color='#458588'>󰂯</span>",
+        "format-off": "<span color='#928374'>󰂲</span>",
+        "format-disabled": "<span color='#928374'>󰂲</span>",
+        "format-connected": "<span color='#458588'>󰂱</span>",
         "tooltip-format": "{controller_alias}\n{num_connections} connected",
         "on-click": "bash -c '~/.config/fuzzel/fuzzel-bluetooth.sh'"
     },
 
     "wireplumber": {
-        "format": "{icon}  <span font_weight='600'>{volume}%</span>",
-        "format-muted": "󰝟 <span font_weight='600'>{volume}%</span>",
+        "format": "<span color='#98971a'>{icon}</span> {volume}%",
+        "format-muted": "<span color='#928374'>󰝟</span> {volume}%",
         "format-icons": [
             "󰕿",
             "󰖀",
@@ -120,11 +107,11 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "{icon}  {essid}",
-        "format-ethernet": "󰈀",
-        "format-linked": "{icon}",
-        "format-disconnected": "󰤯",
-        "format-disabled": "󰤮",
+        "format-wifi": "<span color='#689d6a'>{icon}</span> {essid}",
+        "format-ethernet": "<span color='#689d6a'>󰈀</span>",
+        "format-linked": "<span color='#689d6a'>{icon}</span>",
+        "format-disconnected": "<span color='#928374'>󰤯</span>",
+        "format-disabled": "<span color='#928374'>󰤮</span>",
         "format-icons": [
             "󰤯",
             "󰤟",
@@ -137,7 +124,7 @@
 
     "memory": {
         "interval": 5,
-        "format": "󰍛   <span font_weight='600'>{used:0.1f}G</span>",
+        "format": "<span color='#d65d0e'>󰍛</span> {used:0.1f}G",
         "tooltip-format": "RAM: {used:0.1f} / {total:0.1f} GB ({percentage}%)"
     },
 
@@ -147,13 +134,13 @@
             "warning": 30,
             "critical": 20
         },
-		"events": {
-			"on-discharging-warning": "notify-send -u normal 'Low Battery' 'Battery is at or below 30%'",
-			"on-discharging-critical": "notify-send -u critical 'Critical Battery' 'Plug in your charger soon'"
-		},
-        "format": "{icon}  <span font_weight='600'>{capacity}%</span>",
-        "format-charging": "󰂄 <span font_weight='600'>{capacity}%</span>",
-        "format-plugged": "󰂄 <span font_weight='600'>{capacity}%</span>",
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'Low Battery' 'Battery is at or below 30%'",
+            "on-discharging-critical": "notify-send -u critical 'Critical Battery' 'Plug in your charger soon'"
+        },
+        "format": "<span color='#d79921'>{icon}</span> {capacity}%",
+        "format-charging": "<span color='#d79921'>󰂄</span> {capacity}%",
+        "format-plugged": "<span color='#d79921'>󰂄</span> {capacity}%",
         "format-icons": [
             "󰁺",
             "󰁼",
@@ -165,7 +152,7 @@
     },
 
     "custom/power": {
-        "format": "󰐥",
+        "format": "<span color='#cc241d'>󰐥</span>",
         "tooltip": false,
         "on-click": "wlogout"
     }

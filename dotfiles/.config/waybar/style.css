@@ -1,8 +1,8 @@
 
 * {
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 700;
     border: none;
     border-radius: 0;
     min-height: 0;
@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: #1d2021;
     color: #ebdbb2;
     border: none;
     box-shadow: none;
@@ -20,7 +20,6 @@ window#waybar {
 .modules-center,
 .modules-right {
     background-color: #1d2021;
-    border: 2px solid #7c6f64;
     border-radius: 0;
     margin: 5px 8px;
     padding: 0 5px;
@@ -38,6 +37,7 @@ window#waybar {
 #custom-menu,
 #clock,
 #mpris,
+#mango-window,
 #window,
 #tray,
 #bluetooth,
@@ -47,61 +47,51 @@ window#waybar {
 #battery,
 #custom-power {
     margin: 2px 3px;
-    padding: 1px 8px;
+    padding: 5px 8px 1px;
     min-height: 25px;
-
-    background-color: #282828;
-    border: 2px solid #7c6f64;
-    border-radius: 0;
-
+    background-color: #1d2021;
+    border-bottom: 2px solid #d79921;
     color: #ebdbb2;
-
-    transition: background-color 150ms ease-out,
-                border-color 150ms ease-out,
-                color 150ms ease-out;
+    box-shadow: none;
 }
 
-/* Menu */
+
 #custom-menu {
-    color: #fabd2f;
+    border-bottom: 2px solid #d79921;
 }
 
-/* Clock */
 #clock {
-    font-weight: 700;
+    border-bottom: 2px solid #689d6a;
 }
 
-/* Music */
 #mpris {
-    border-color: #7c6f64;
+    border-bottom: 2px solid #b16286;
 }
 
-/* Current window */
-#window {
-    color: #ebdbb2;
-    font-weight: 600;
-    padding: 1px 9px;
+#bluetooth {
+    border-bottom: 2px solid #458588;
 }
 
-#window.empty {
-    color: #928374;
+#wireplumber {
+    border-bottom: 2px solid #98971a;
 }
 
-/* System tray */
-#tray {
-    padding: 1px 7px;
+#network {
+    border-bottom: 2px solid #689d6a;
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
+#memory {
+    border-bottom: 2px solid #d65d0e;
 }
 
-/* Power */
+#battery {
+    border-bottom: 2px solid #d79921;
+}
+
 #custom-power {
-    color: #fb4934;
+    border-bottom: 2px solid #cc241d;
 }
 
-/* Hover effects */
 #custom-menu:hover,
 #clock:hover,
 #mpris:hover,
@@ -114,78 +104,66 @@ window#waybar {
 #battery:hover,
 #custom-power:hover {
     background-color: #3c3836;
-    border-color: #bdae93;
     color: #fabd2f;
+    border-bottom-color: #fabd2f;
 }
 
-/* Workspace switcher outer box */
 #workspaces {
     margin: 2px 3px;
     padding: 1px 5px;
-    background-color: #282828;
-    border: 2px solid #7c6f64;
+    background-color: #1d2021;
     border-radius: 0;
     box-shadow: none;
 }
 
-/* Workspace buttons */
 #workspaces button {
     margin: 0 2px;
-    padding: 0 4px;
+    padding: 5px 6px 1px;
     min-width: 20px;
     min-height: 25px;
-
     background: transparent;
     border: none;
+    border-bottom: 2px solid transparent;
     border-radius: 0;
-
     color: #928374;
     font-weight: 600;
     box-shadow: none;
-
-    transition: color 180ms ease-out;
 }
 
-/* Empty workspace */
-#workspaces button.empty {
+#workspaces button.empty,
+#workspaces button.occupied {
     color: #928374;
+    border-bottom-color: transparent;
     background: transparent;
-    border: none;
 }
 
-/* Active workspace */
 #workspaces button.active,
 #workspaces button.focused {
-    color: #fabd2f;
+    color: #b16286;
+    border-bottom: 2px solid #b16286;
     background: transparent;
-    border: none;
-    font-weight: 700;
+    font-weight: bold;
 }
 
-/* Workspace hover */
 #workspaces button:hover {
     color: #ebdbb2;
     background: transparent;
-    border: none;
+    border-bottom-color: #bdae93;
 }
 
-/* Urgent workspace */
 #workspaces button.urgent {
-    color: #fbf1c7;
-    background: transparent;
-    border: none;
+    color: #fb4934;
+    border-bottom-color: #fb4934;
 }
 
-/* Battery critical */
 #battery.critical:not(.charging) {
     color: #cc241d;
-    border-color: #cc241d;
+    border-bottom-color: #cc241d;
 }
 
-/* Tooltips */
 tooltip {
-    background-color: #282828;
-    border: 2px solid #7c6f64;
+    background-color: #1d2021;
+    border: 1px solid #504945;
     border-radius: 0;
     color: #ebdbb2;
     padding: 6px;

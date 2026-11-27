@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "strategy": "window",
+  "strategies": {
+    "edge": {
+      "modifier": "alt",
+      "fraction": "1/3"
+    },
+    "window": {
+      "modifier": "alt",
+      "fraction": "1/3"
+    }
+  }
+}

@@ -7,7 +7,7 @@ if [ -z "$QUERY" ]; then
 fi
 
 if [[ "$QUERY" =~ ^(https?|ftp):// ]] || [[ "$QUERY" =~ ^[^\ ]+\.[^\ ]+ ]]; then
-	helium-browser "$QUERY"
+	firefox "$QUERY"
 else
-    helium-browser "https://www.google.com/search?q=$QUERY"
+	firefox "https://www.google.com/search?q=$QUERY"
 fi

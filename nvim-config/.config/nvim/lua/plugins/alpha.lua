@@ -6,7 +6,6 @@ return {
     local alpha = require('alpha')
     local dashboard = require('alpha.themes.dashboard')
 
-    -- make sure leader is space (set this in your core options too, not just here)
     vim.g.mapleader = " "
     vim.g.maplocalleader = " "
 
@@ -21,30 +20,49 @@ return {
       "▄   ░░░░░░░   ▄",
       "█▄▄▄▄▄▄▄▄▄▄▄▄▄█",
     }
+    dashboard.section.header.opts.hl = "Type"
 
-    -- keys: the REAL leader-key sequence (without <leader>) e.g. "ff", "fr"
-    -- label: what shows on screen, auto-prefixed with "SPC "
-    local function spc_button(keys, desc, action)
+    local subheader = {
+      type = "text",
+      val = "Apogee Neovim",
+      opts = {
+        position = "center",
+        hl = "String",
+      },
+    }
+
+local function spc_button(keys, icon, desc, action)
       local spaced = keys:gsub("(.)", "%1 "):gsub("%s+$", "") -- "ff" -> "f f"
-      local btn = dashboard.button("<leader>" .. keys, "  SPC " .. spaced .. "  " .. desc, action)
+      local btn = dashboard.button("<leader>" .. keys, icon .. "  " .. desc, action)
+
+      btn.opts.shortcut = "SPC " .. spaced
       btn.opts.hl = "Keyword"
       btn.opts.hl_shortcut = "Number"
       return btn
     end
 
     dashboard.section.buttons.val = {
-      spc_button("ff", "Find file",    ":Telescope find_files <CR>"),
-      spc_button("fr", "Recent files", ":Telescope oldfiles <CR>"),
-      spc_button("fg", "Find text",    ":Telescope live_grep <CR>"),
-      spc_button("fn", "New file",     ":ene <BAR> startinsert <CR>"),
-      spc_button("fc", "Config",       ":e $MYVIMRC <CR>"),
-      spc_button("qq", "Quit",         ":qa <CR>"),
+      spc_button("ff", "", "Find file",    ":Telescope find_files <CR>"),
+      spc_button("fr", "", "Recent files", ":Telescope oldfiles <CR>"),
+      spc_button("fg", "", "Find text",    ":Telescope live_grep <CR>"),
+      spc_button("fn", "", "New file",     ":ene <BAR> startinsert <CR>"),
+      spc_button("fc", "", "Config",       ":e $MYVIMRC <CR>"),
+      spc_button("qq", "", "Quit",         ":qa <CR>"),
     }
 
-    dashboard.section.footer.val = "the void collapses inward"
-
-    dashboard.section.header.opts.hl = "Type"
+    dashboard.section.footer.val = "Tat tvam asi"
     dashboard.section.footer.opts.hl = "Comment"
+
+    dashboard.config.layout = {
+      { type = "padding", val = 2 },
+      dashboard.section.header,
+      { type = "padding", val = 1 },
+      subheader,
+      { type = "padding", val = 2 },
+      dashboard.section.buttons,
+      { type = "padding", val = 1 },
+      dashboard.section.footer,
+    }
 
     alpha.setup(dashboard.opts)
 
